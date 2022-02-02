@@ -17,19 +17,25 @@ export default function App() {
 
   function clickChange(event) {
     setheadingText(name);
+
+    event.preventDefault();
+    //at the end of function
+    //used to not refresh the page
   }
   return (
     //  <Events />
     <div className="App">
       <h1>Hello {headingText}</h1>
-      <input
-        onChange={handleChange}
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-      />
-      <br />
-      <button onClick={clickChange}>Submit</button>
+      <form onSubmit={clickChange}>
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+        />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
