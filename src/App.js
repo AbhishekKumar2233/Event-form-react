@@ -1,35 +1,30 @@
 import { useState } from "react";
+import Events from "./Events";
 import "./styles.css";
 
 export default function App() {
-  const [headingText, setheadingText] = useState("Hello Peter");
-  function handleClick() {
-    setheadingText("Submitted");
-    // prompt("what is your name");
-    // confirm("You want to exit?");
-  }
-  //
-  const [isMouseover, setMouseover] = useState(false);
+  const [name, setName] = useState("");
 
-  function handleClickmouse() {
-    setMouseover(true);
+  function handleChange(event) {
+    console.log(event.target.value);
+    console.log(event.target.placeholder);
+    console.log(event.target.type);
+    setName(event.target.value);
+    //used to get input value.
   }
-  function handleClickmouseout() {
-    setMouseover(false);
-  }
+
   return (
+    //  <Events />
     <div className="App">
-      <h1>{headingText}</h1>
-      <input type="text" placeholder="Enter your name" />
+      <h1>Hello {name}</h1>
+      <input
+        onChange={handleChange}
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+      />
       <br />
-      {/* <button onClick={handleClick}>Login</button> */}
-      <button
-        style={{ backgroundColor: isMouseover ? "black" : "blue" }}
-        onMouseOver={handleClickmouse}
-        onMouseOut={handleClickmouseout}
-      >
-        Login
-      </button>
+      <button>Submit</button>
     </div>
   );
 }
