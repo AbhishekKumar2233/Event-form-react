@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "GFS Didot";
+  background-color: rgb(75, 245, 188);
+}
+.App {
+  width: 100%;
+  height: auto;
+  padding-top: 40vh;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+}
+.App input {
+  padding: 10px 50px;
+  margin: 5px 0px;
+  border: 2px solid black;
+  color: #000000;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+}
+.App button {
+  padding: 10px 120px;
+  color: #fff;
+  font-weight: bolder;
+  background-color: transparent;
+  border: 2px solid black;
+}
