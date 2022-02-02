@@ -4,19 +4,24 @@ import "./styles.css";
 
 export default function App() {
   const [name, setName] = useState("");
+  const [headingText, setheadingText] = useState("");
 
   function handleChange(event) {
     console.log(event.target.value);
     console.log(event.target.placeholder);
     console.log(event.target.type);
+
     setName(event.target.value);
     //used to get input value.
   }
 
+  function clickChange(event) {
+    setheadingText(name);
+  }
   return (
     //  <Events />
     <div className="App">
-      <h1>Hello {name}</h1>
+      <h1>Hello {headingText}</h1>
       <input
         onChange={handleChange}
         type="text"
@@ -24,7 +29,7 @@ export default function App() {
         value={name}
       />
       <br />
-      <button>Submit</button>
+      <button onClick={clickChange}>Submit</button>
     </div>
   );
 }
